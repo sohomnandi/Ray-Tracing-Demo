@@ -30,6 +30,7 @@ LIGHT_COLOR = (255, 255, 150)
 sphere_center = np.array([400.0, 300.0])
 sphere_radius = 50.0
 move_speed = 5
+velocity = np.array([5.0, 5.0])  # Ball velocity
 
 # Define Light Source Parameters
 light_position = np.array([150.0, 100.0])
@@ -146,26 +147,43 @@ def draw_scene():
 # SECTION D: Main Loop
 # -------------------------------------------------------------
 
+# Main loop
 running = True
 while running:
     clock.tick(FPS)
 
-    # Process events.
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        
-    # Move the sphere with the arrow keys.
+
+    # Control movement using arrow keys
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        sphere_center[0] -= move_speed
-    if keys[pygame.K_RIGHT]:
-        sphere_center[0] += move_speed
-    if keys[pygame.K_UP]:
-        sphere_center[1] -= move_speed
-    if keys[pygame.K_DOWN]:
-        sphere_center[1] += move_speed
+        velocity = np.array([-5.0, 0.0])
+    elif keys[pygame.K_RIGHT]:
+        velocity = np.array([5.0, 0.0])
+    elif keys[pygame.K_UP]:
+        velocity = np.array([0.0, -5.0])
+    elif keys[pygame.K_DOWN]:
+        velocity = np.array([0.0, 5.0])
+    else:
+        velocity = np.array([0.0, 0.0])  # Stop movement when no key is pressed
 
-    draw_scene()        # Calling the Ray Tracer Renderer
+    # Move sphere based on velocity
+    sphere_center += velocity
 
-pygame.quit()           # Quit the Game Engine
+    # Prevent the ball from going past the edges
+    if sphere_center[0] - sphere_radius <= 0:
+        sphere_center[0] = sphere_radius
+    elif sphere_center[0] + sphere_radius >= WIDTH:
+        sphere_center[0] = WIDTH - sphere_radius
+
+    if sphere_center[1] - sphere_radius <= 0:
+        sphere_center[1] = sphere_radius
+    elif sphere_center[1] + sphere_radius >= HEIGHT:
+        sphere_center[1] = HEIGHT - sphere_radius
+
+    draw_scene()    # Draw the scene
+
+pygame.quit()       # Exit the program
+
