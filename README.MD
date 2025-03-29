@@ -9,7 +9,7 @@ This application demonstrates a real-time ray tracing shadow simulation using Py
 ## Features
 
 - Real-time light and shadow rendering using ray tracing.
-- Interactive movement of the sphere using keyboard controls.
+- Interactive movement of the sphere and light source using keyboard controls.
 - Realistic shadows and light occlusion.
 - Adjustable parameters for more dense or sparse rays.
 
