@@ -40,7 +40,7 @@ Activate the Virtual Environment:
 
 For Windows users:
 ```powershell
-./activate.bat
+.\activate.bat
 ```
 For Linux users:
 ```bash
