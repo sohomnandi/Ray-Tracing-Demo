@@ -23,10 +23,44 @@ Ensure you have the following installed:
 - **Pygame 2.5.0** or higher
 - **NumPy 1.25.2** or higher
 
+We recommend creating a virtual environment for running the script and installing the dependencies to avoid it interfering with the main system.
+
+To create a Virtual Environment:
+
+```bash
+python3 -m venv .
+```
+Navigate to the folder **Scripts**:
+
+```bash
+cd venv/Scripts
+```
+
+Activate the Virtual Environment:
+
+For Windows users:
+```powershell
+./activate.bat
+```
+For Linux users:
+```bash
+source ./activate.sh
+```
+
+To deactivate the Virtual Environment:
+```bash
+deactivate
+```
+
 You can install the dependencies using pip:
 
 ```bash
 pip install pygame numpy
+```
+or use the requirements.txt
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
@@ -39,7 +73,7 @@ pip install pygame numpy
 4. Run the script using:
 
 ```bash
-python ray_tracing_simulation.py
+python -m Ray_Tracing.py
 ```
 
 ---
