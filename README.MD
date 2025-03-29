@@ -46,10 +46,13 @@ python ray_tracing_simulation.py
 
 ## Controls
 
-Use the following keys to move the sphere:
+Set the required parameters of the Rays, Light Source and the Sphere and then click **Start Simulation** button to start the simulation. The default values are already filled in for reference.
+
+Use the following keys to move the sphere and light source:
 
 - **Arrow Keys**: Move the sphere in the respective direction.
-- **ESC or Close Button**: Exit the simulation.
+- **WASD**: Move the Light Source in the respective direction.
+- **Close Button**: Exit the simulation.
 
 ---
 
