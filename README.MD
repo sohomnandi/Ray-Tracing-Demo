@@ -51,7 +51,7 @@ Set the required parameters of the Rays, Light Source and the Sphere and then cl
 Use the following keys to move the sphere and light source:
 
 - **Arrow Keys**: Move the sphere in the respective direction.
-- **WASD**: Move the Light Source in the respective direction.
+- **WASD Keys**: Move the Light Source in the respective direction.
 - **Close Button**: Exit the simulation.
 
 ---
