@@ -69,6 +69,7 @@ Use the following keys to move the sphere and light source:
 - Ensure Python 3.13.2 and required packages are installed.
 - If the simulation runs slowly, reduce the number of rays in the script.
 - If errors occur, verify correct package versions are installed.
+- Try using the pre-built **exe** file under releases for simplicity.
 
 ---
 
